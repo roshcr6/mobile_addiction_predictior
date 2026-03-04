@@ -21,9 +21,9 @@ backend/models/*.h5
 backend/models/*.pt
 backend/models/*.pth
 
-# Data files (can be large)
-backend/data/*.csv
-backend/data/*.txt
+# Data files - tracked (needed for ML training)
+# backend/data/*.csv
+# backend/data/*.txt
 
 # Node
 node_modules/

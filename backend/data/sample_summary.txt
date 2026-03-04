@@ -1,0 +1,15 @@
+============================================================
+  Batch OCR Results – Sample Screenshots
+============================================================
+  Total images    : 15
+  Processed OK    : 15
+  Errors          : 0
+
+  Label distribution:
+    Low        █████  (5)
+    Moderate   ██████  (6)
+    High       ████  (4)
+
+  Avg addiction score : 4.25
+  Avg screen time     : 8.21 h
+============================================================
