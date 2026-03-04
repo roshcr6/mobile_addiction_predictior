@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ML models / large binaries
+backend/models/*.pkl
+backend/models/*.joblib
+backend/models/*.h5
+backend/models/*.pt
+backend/models/*.pth
+
+# Data files (can be large)
+backend/data/*.csv
+backend/data/*.txt
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.env
+
+# Env files
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/

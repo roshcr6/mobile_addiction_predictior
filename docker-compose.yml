@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+  # ── FastAPI backend ──────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/Dockerfile.backend
+    container_name: addiction_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - backend_models:/app/models
+      - backend_data:/app/data
+    environment:
+      - DEBUG=false
+      - OLLAMA_BASE_URL=http://ollama:11434
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── React frontend ───────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.frontend
+    container_name: addiction_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # ── Optional: Ollama LLM ─────────────────────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: addiction_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    profiles:
+      - llm   # Only starts with: docker compose --profile llm up
+
+volumes:
+  backend_models:
+  backend_data:
+  ollama_data:

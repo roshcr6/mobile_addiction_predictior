@@ -1,0 +1,77 @@
+.wrapper { display: flex; flex-direction: column; gap: 24px; }
+
+/* Badge */
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid;
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  flex-wrap: wrap;
+}
+.badgeEmoji { font-size: 2.8rem; }
+.badgeLabel { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.badgeLevel { font-size: 2rem; font-weight: 700; margin-top: 2px; }
+.badgeScore { margin-left: auto; text-align: right; }
+.badgeScoreLabel { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; }
+
+/* Gauge */
+.gaugeWrap { display: flex; flex-direction: column; gap: 4px; min-width: 180px; }
+.gauge { height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.gaugeFill { height: 100%; background: linear-gradient(90deg, var(--low), var(--moderate), var(--high)); border-radius: 99px; transition: width .6s ease; }
+.gaugeLabel { font-size: 0.8rem; color: var(--text-muted); text-align: right; }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+.col { display: flex; flex-direction: column; gap: 20px; }
+
+/* Section */
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.section h3 { font-size: 0.95rem; margin-bottom: 16px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; }
+
+/* Feature grid */
+.featureGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 500px) { .featureGrid { grid-template-columns: repeat(2, 1fr); } }
+.featureCard {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+.featureIcon { font-size: 1.4rem; }
+.featureValue { font-size: 1.05rem; font-weight: 600; }
+.featureLabel { font-size: 0.72rem; color: var(--text-muted); }
+
+/* Probability bars */
+.probList { display: flex; flex-direction: column; gap: 12px; }
+.probRow { display: flex; align-items: center; gap: 10px; }
+.probLabel { width: 70px; font-size: 0.85rem; }
+.probTrack { flex: 1; height: 10px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
+.probFill { height: 100%; border-radius: 99px; transition: width .5s ease; }
+.probPct { width: 46px; font-size: 0.8rem; color: var(--text-muted); text-align: right; }
+
+/* Reset button */
+.resetBtn {
+  align-self: flex-start;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.resetBtn:hover { background: rgba(108, 99, 255, 0.1); }
